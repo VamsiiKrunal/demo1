@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import Allproducts from './pages/Allproducts';
+import Cart from './pages/Cart';
+import IndDetails from './IndDetails';
+
+import Conditional from './Conditional';
+
 
 function App() {
+  const [cart, setcart] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+      <Route path='/inddetail' element={<IndDetails/>}/>
+      <Route path='/condition' element={<Conditional/>}/>
+
+
+        <Route path='/allproducts' element={<Allproducts cart={cart} setcart={setcart} />} />
+        <Route path='/cart' element={<Cart cart={cart} />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
