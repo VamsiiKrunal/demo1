@@ -6,16 +6,20 @@ import Cart from './pages/Cart';
 import IndDetails from './IndDetails';
 
 import Conditional from './Conditional';
+import A from './A';
+import B from './B'
 
 
 function App() {
   const [cart, setcart] = useState([]);
+  
 
   return (
     <BrowserRouter>
       <Routes>
       <Route path='/inddetail' element={<IndDetails/>}/>
-      <Route path='/condition' element={<Conditional/>}/>
+      <Route path='/A' element={<A/>}/>
+      <Route path='/B' element={<B/>}/>
 
 
         <Route path='/allproducts' element={<Allproducts cart={cart} setcart={setcart} />} />
