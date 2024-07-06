@@ -8,6 +8,7 @@ import IndDetails from './IndDetails';
 import Conditional from './Conditional';
 import A from './A';
 import B from './B'
+import { Home } from './pages/Home';
 
 
 function App() {
@@ -18,9 +19,7 @@ function App() {
     <BrowserRouter>
       <Routes>
       <Route path='/inddetail' element={<IndDetails/>}/>
-      <Route path='/A' element={<A/>}/>
-      <Route path='/B' element={<B/>}/>
-
+      <Route path='/' element={<Home/>}/>
 
         <Route path='/allproducts' element={<Allproducts cart={cart} setcart={setcart} />} />
         <Route path='/cart' element={<Cart cart={cart} />} />
